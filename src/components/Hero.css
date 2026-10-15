@@ -1,0 +1,197 @@
+.hero {
+  position: relative;
+  min-height: calc(100vh - var(--header-h));
+  min-height: calc(100dvh - var(--header-h));
+  display: grid;
+  align-items: end;
+  overflow: hidden;
+  color: var(--white);
+  background: var(--bg-deep);
+}
+
+.hero__media {
+  position: absolute;
+  inset: 0;
+  pointer-events: none;
+}
+
+.hero__grid {
+  position: absolute;
+  inset: 0;
+  background-image:
+    linear-gradient(rgba(250, 248, 244, 0.05) 1px, transparent 1px),
+    linear-gradient(90deg, rgba(250, 248, 244, 0.05) 1px, transparent 1px);
+  background-size: 56px 56px;
+  mask-image: linear-gradient(180deg, rgba(0, 0, 0, 0.7), transparent 85%);
+}
+
+.hero__panel--left {
+  position: absolute;
+  left: -8%;
+  top: 10%;
+  width: 42%;
+  height: 70%;
+  background: linear-gradient(145deg, #2f3d38 0%, #1a2421 70%);
+  transform: skewX(-8deg);
+  opacity: 0.9;
+}
+
+.hero__panel--right {
+  position: absolute;
+  right: -5%;
+  bottom: 0;
+  width: 48%;
+  height: 78%;
+  background:
+    linear-gradient(160deg, rgba(196, 133, 42, 0.22), transparent 45%),
+    linear-gradient(200deg, #3a4a44, #15201d 70%);
+  clip-path: polygon(18% 0, 100% 0, 100% 100%, 0 100%);
+}
+
+.hero__blueprint {
+  position: absolute;
+  right: 4%;
+  top: 12%;
+  width: min(52vw, 640px);
+  color: rgba(250, 248, 244, 0.28);
+  animation: blueprint-drift 14s var(--ease) infinite alternate;
+}
+
+.hero__blueprint svg {
+  width: 100%;
+  height: auto;
+}
+
+.hero__glow {
+  position: absolute;
+  left: 8%;
+  bottom: 18%;
+  width: 280px;
+  height: 280px;
+  background: radial-gradient(circle, rgba(212, 160, 74, 0.28), transparent 68%);
+  filter: blur(8px);
+  animation: glow-pulse 5s ease-in-out infinite;
+}
+
+.hero__content {
+  position: relative;
+  z-index: 1;
+  padding-block: clamp(4rem, 12vh, 7rem) clamp(3.5rem, 10vh, 5.5rem);
+  max-width: 40rem;
+  margin-right: auto;
+  margin-left: max(1rem, calc((100% - var(--max)) / 2));
+  width: min(100% - 2rem, 40rem);
+}
+
+.hero__brand {
+  margin-bottom: var(--space-4);
+  font-family: var(--font-display);
+  font-size: clamp(1.6rem, 3.4vw, 2.4rem);
+  font-weight: 800;
+  letter-spacing: 0.06em;
+  color: var(--amber-bright);
+}
+
+.hero__title {
+  font-size: clamp(2.2rem, 5.5vw, 4rem);
+  font-weight: 800;
+  max-width: 12ch;
+}
+
+.hero__lead {
+  margin-top: var(--space-5);
+  max-width: 34rem;
+  color: rgba(250, 248, 244, 0.78);
+  font-size: clamp(1.05rem, 2vw, 1.2rem);
+}
+
+.hero__actions {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 0.85rem;
+  margin-top: var(--space-6);
+}
+
+.hero__proof {
+  margin-top: var(--space-5);
+  color: rgba(250, 248, 244, 0.55);
+  font-size: 0.92rem;
+  letter-spacing: 0.01em;
+}
+
+.hero-animate {
+  opacity: 0;
+  transform: translateY(24px);
+  animation: hero-rise 0.9s var(--ease) forwards;
+}
+
+.hero-animate--delay-1 {
+  animation-delay: 0.12s;
+}
+
+.hero-animate--delay-2 {
+  animation-delay: 0.24s;
+}
+
+.hero-animate--delay-3 {
+  animation-delay: 0.36s;
+}
+
+@keyframes hero-rise {
+  to {
+    opacity: 1;
+    transform: translateY(0);
+  }
+}
+
+@keyframes blueprint-drift {
+  from {
+    transform: translate3d(0, 0, 0);
+  }
+  to {
+    transform: translate3d(-12px, 10px, 0);
+  }
+}
+
+@keyframes glow-pulse {
+  0%,
+  100% {
+    opacity: 0.55;
+    transform: scale(1);
+  }
+  50% {
+    opacity: 0.9;
+    transform: scale(1.08);
+  }
+}
+
+@media (max-width: 768px) {
+  .hero__blueprint {
+    width: 90%;
+    right: -10%;
+    top: 6%;
+    opacity: 0.45;
+  }
+
+  .hero__panel--left {
+    width: 70%;
+  }
+
+  .hero__content {
+    width: min(100% - 2rem, var(--max));
+    margin-inline: auto;
+  }
+}
+
+@media (prefers-reduced-motion: reduce) {
+  .hero-animate {
+    opacity: 1;
+    transform: none;
+    animation: none;
+  }
+
+  .hero__blueprint,
+  .hero__glow {
+    animation: none;
+  }
+}
