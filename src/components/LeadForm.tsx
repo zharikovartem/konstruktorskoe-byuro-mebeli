@@ -103,7 +103,7 @@ export function LeadForm() {
                     setError('')
                     setForm((prev) => ({ ...prev, contact: e.target.value }))
                   }}
-                  placeholder="+7… или @username"
+                  placeholder="+375… или @username"
                 />
               </label>
 
