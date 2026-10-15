@@ -7,11 +7,11 @@ export const navLinks = [
 ] as const
 
 export const contacts = {
-  phone: '+7 993 280 35 97',
-  phoneHref: 'tel:+79932803597',
+  phone: '+375 29 384-14-81',
+  phoneHref: 'tel:+375293841481',
   email: 'for5.mazhor@yandex.ru',
-  telegram: '@tech7group01',
-  telegramHref: 'https://t.me/tech7group01',
+  telegram: '@wood_elements_v',
+  telegramHref: 'https://t.me/wood_elements_v',
   legal: 'ИП Новокшонов Т.И. · УНП 772410176189',
 }
 
