@@ -27,19 +27,23 @@
 }
 
 .header__logo {
-  font-family: var(--font-display);
-  font-size: 1.15rem;
-  font-weight: 800;
-  letter-spacing: 0.04em;
+  font-size: 0.95rem;
+  color: inherit;
   flex-shrink: 0;
 }
 
-.header__logo span {
+.header__logo .logo__mark {
   color: var(--amber-bright);
 }
 
-.header--scrolled .header__logo span {
+.header--scrolled .header__logo .logo__mark {
   color: var(--amber);
+}
+
+@media (max-width: 520px) {
+  .header__logo .logo__text-soft {
+    display: none;
+  }
 }
 
 .header__nav {

@@ -1,4 +1,5 @@
 import { contacts, navLinks } from '../data/content'
+import { Logo } from './Logo'
 import './Footer.css'
 
 export function Footer() {
@@ -7,7 +8,7 @@ export function Footer() {
       <div className="container footer__inner">
         <div className="footer__brand">
           <a className="footer__logo" href="#top">
-            TECH<span>7</span>GROUP
+            <Logo />
           </a>
           <p>Внешнее конструкторское бюро для мебельных производств.</p>
         </div>
@@ -23,7 +24,7 @@ export function Footer() {
 
         <div className="footer__meta">
           <p>{contacts.legal}</p>
-          <p>© 2023–2026 TECH7GROUP</p>
+          <p>© 2023–2026 Wood Construction</p>
         </div>
       </div>
     </footer>

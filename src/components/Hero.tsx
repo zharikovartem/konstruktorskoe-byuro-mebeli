@@ -1,3 +1,4 @@
+import { Logo } from './Logo'
 import './Hero.css'
 
 export function Hero() {
@@ -30,7 +31,9 @@ export function Hero() {
       </div>
 
       <div className="container hero__content">
-        <p className="hero__brand hero-animate">TECH7GROUP</p>
+        <p className="hero__brand hero-animate">
+          <Logo />
+        </p>
         <h1 id="hero-title" className="hero__title hero-animate hero-animate--delay-1">
           Конструкторское бюро для мебели на аутсорсе
         </h1>

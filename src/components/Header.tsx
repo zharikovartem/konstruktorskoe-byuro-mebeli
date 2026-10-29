@@ -1,5 +1,6 @@
 import { useEffect, useState } from 'react'
 import { contacts, navLinks } from '../data/content'
+import { Logo } from './Logo'
 import './Header.css'
 
 export function Header() {
@@ -26,7 +27,7 @@ export function Header() {
     <header className={`header ${scrolled ? 'header--scrolled' : ''}`}>
       <div className="container header__inner">
         <a className="header__logo" href="#top" onClick={close}>
-          TECH<span>7</span>GROUP
+          <Logo />
         </a>
 
         <nav className="header__nav" aria-label="Основная навигация">
